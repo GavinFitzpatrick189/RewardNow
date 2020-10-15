@@ -24,3 +24,72 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+
+
+
+ion-content.background {
+    --background: url(../../ionicTest/src/assets/blu.png) no-repeat center/cover fixed;
+  }
+
+  .cardconteudo {
+    background: rgba(0,0,0,0.7);
+}
+
+.centerSlides{
+    vertical-align: center;
+}
+
+.bg-transparent {
+  background: transparent;
+}
+
+.scanFooter {
+  vertical-align: bottom;
+
+  background: rgba(0,0,0,0.7);
+}
+
+
+.scanHeader {
+  vertical-align: top;
+  text-align: center;
+  background: rgba(0,0,0,0.5);
+  height: 40px;
+}
+
+
+.scanIcon {
+  display: block;
+  text-align: center;
+opacity: 0.5;
+  height: 350px;
+  width: 350px;
+  
+}
+
+.myphoto {
+    display: block;
+
+  }
+
+  .myphotoIconBox {
+    width: auto;
+    margin: auto;
+    text-align: center;
+    vertical-align: center;
+    margin: 10%;
+    background: rgba(0,0,0,0.7);
+
+  }
+
+  .swipeFab {
+    width: auto;
+    margin: auto;
+    text-align: right;
+    vertical-align: middle;
+    margin: 10%;
+    padding-left: 10%;
+
+  }

@@ -1,17 +1,202 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
+<ion-header translucent="true" no-border>
+  <div text-center>
+    <ion-title class="scanHeader" >
+      Reward Now
     </ion-title>
-  </ion-toolbar>
+  </div>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content class="background" fullscreen="true">
+
+  <ion-slides pager="false" [options]="slideOpts">
+
+    <ion-slide>
+      <ion-list class="bg-transparent">
+        <ion-item color="none" lines="none">
+
+          <ion-card class="cardconteudo">
+            <img src="../../assets/scanWine.jpg" />
+            <ion-card-header>
+              <ion-card-subtitle>It all starts Now</ion-card-subtitle>
+              <ion-card-title>Scan</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Scan products with your smartphone
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+
+        <ion-item color="none" lines="none">
+
+          <ion-card class="cardconteudo">
+            <img src="../../assets/scanVoucher.jpg" />
+            <ion-card-header>
+              <ion-card-subtitle>Get what you're owed</ion-card-subtitle>
+              <ion-card-title>Claim</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Claim Rewards for products
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+
+
+        <ion-item color="none" lines="none">
+
+          <ion-card class="cardconteudo">
+            <img src="../../assets/cellPhones.jpg" />
+            <ion-card-header>
+              <ion-card-subtitle>Make my day</ion-card-subtitle>
+              <ion-card-title>Share</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Share rewards with friends and family
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+
+        <ion-item color="none" lines="none">
+
+          <ion-card class="cardconteudo">
+            <img src="../../assets/businessWoman.jpg" />
+            <ion-card-header>
+              <ion-card-subtitle>Whats new?</ion-card-subtitle>
+              <ion-card-title>Notify</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Get notified about Rewards
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+    </ion-slide>
+
+    <ion-slide>
+      <!-- Fallback for iOS PWA -->
+
+      <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event.target.files)" >
+
+      <!-- <ion-fab-button expand="full" (click)="reset()" *ngIf="scanResult">
+        <ion-icon slot="start" name="refresh"></ion-icon>
+      </ion-fab-button> -->
+
+      <ion-fab-button (click)="reset()" *ngIf="scanResult">
+        <ion-icon name="refresh"></ion-icon>
+      </ion-fab-button>
+
+      <!-- Shows our camera stream -->
+      
+      <video #video [hidden]="!scanActive" width="100%" class="myphoto"></video>
+      <!-- Used to render the camera stream images -->
+      <canvas #canvas hidden></canvas>
+
+      <ion-card *ngIf="scanResult" class="cardconteudo">
+        <ion-card-header>
+          <ion-card-title> 
+                     {{ scanResult }}
+          </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+
+      <!-- <ion-card class="myphotoIconBox" *ngIf="!scanResult"> -->
+        <ion-icon name="qr-code-outline" class="scanIcon" *ngIf="!scanResult"></ion-icon>
+      <!-- </ion-card> -->
+
+
+
+    </ion-slide>
+
+    <ion-slide>
+
+     
+      
+      <ion-list class="bg-transparent">
+    
+        <ion-item-sliding>
+          <ion-item color="none" lines="none">
+            <ion-card class="cardconteudo">
+              <img src="../../assets/centra.jpg" />
+              <ion-card-header>
+                <ion-card-title>Centra £5</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+          </ion-item>
+      
+          <ion-item-options side="end" class="swipeFab">  
+            <ion-fab-button > 
+              <ion-icon name="Share"></ion-icon>
+            </ion-fab-button>
+          </ion-item-options>
+        </ion-item-sliding>
+
+        <ion-item-sliding>
+          <ion-item color="none" lines="none">
+            <ion-card class="cardconteudo">
+              <img src="../../assets/nandos.jpg" />
+              <ion-card-header>
+                <ion-card-title>Nandos 10%</ion-card-title>
+              </ion-card-header>
+            </ion-card>
+          </ion-item>
+      
+          <ion-item-options side="end" class="swipeFab">  
+            <ion-fab-button > 
+              <ion-icon name="Share"></ion-icon>
+            </ion-fab-button>
+          </ion-item-options>
+        </ion-item-sliding>
+
+
+
+        <ion-item-sliding *ngFor="let reward of rewardArray;">  
+        <ion-item  color="none" lines="none">
+          <ion-card class="cardconteudo">
+            <img src="../../assets/highStreet.jpg" />
+            <ion-card-header>
+              <ion-card-title>{{reward}}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-item>
+
+        <ion-item-options side="end" class="swipeFab">  
+          <ion-fab-button > 
+            <ion-icon name="Share"></ion-icon>
+          </ion-fab-button>
+        </ion-item-options>
+        </ion-item-sliding>
+
+      </ion-list>
+    </ion-slide>
+  </ion-slides>
+
 </ion-content>
+
+<ion-footer translucent="true" no-border>
+  <ion-grid class="scanFooter">
+    <ion-row>
+
+      <ion-col class="flexcontainer">
+        <ion-fab-button  (click)="captureImage()" >
+          <ion-icon name="cloud-upload-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+
+      <ion-col class="flexcontainer">
+        <!-- Stop our scanner preview if active -->
+        <ion-fab-button (click)="stopScan()" color="danger" *ngIf="scanActive">
+          <ion-icon name="close"></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+
+      <ion-col class="flexcontainer">
+        <ion-fab-button (click)="startScan()">
+          <ion-icon name="scan"></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-footer>
+
+<!-- Trigger the file input -->
