@@ -2,6 +2,9 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { ToastController, LoadingController, Platform } from '@ionic/angular';
 import jsQR from 'jsqr';
 
+import { Plugins } from '@capacitor/core';
+const { Share } = Plugins;
+
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
@@ -32,9 +35,19 @@ export class Tab3Page {
       console.log('I am a an iOS PWA!');
       // E.g. hide the scan functionality!
     }
-
   }
 
+
+  async shareReward(link){
+    await Share.share({
+      title: 'New Reward',
+      text: 'You have a new reward',
+      url: link,
+      dialogTitle: 'Share with buddies'
+    });
+
+    
+  }
 
 
   async startScan() {
