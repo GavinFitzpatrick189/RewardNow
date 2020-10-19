@@ -1,0 +1,26 @@
+
+<ion-item color="none" lines="none">
+  <ion-card class="slideCardconteudo">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-icon class="rightCardIcon" name="happy-outline"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-card-header>
+            <ion-card-subtitle>{{title}}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+  </ion-card>
+</ion-item>
+
+<ion-item-options side="end" class="swipeFab">
+  <ion-fab-button (click)="shareReward(reward)" class="fabNow">
+    <ion-icon name="Share"></ion-icon>
+  </ion-fab-button>
+</ion-item-options>
+
+
+

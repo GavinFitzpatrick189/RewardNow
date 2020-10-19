@@ -13,11 +13,8 @@ export class LeftcardComponent implements OnInit {
   @Input('content') content: string;
 
 
-  constructor() { 
+  constructor() { }
 
-  }
-
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

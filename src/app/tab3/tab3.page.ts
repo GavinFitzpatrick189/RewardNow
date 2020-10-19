@@ -18,8 +18,9 @@ export class Tab3Page {
   canvasElement: any;
   videoElement: any;
   canvasContext: any;
+
   scanActive = false;
-  scanResult = null;
+  scanResult: string;
   loading: HTMLIonLoadingElement = null;
   rewardArray = ['Free Coffee'];
 
@@ -35,6 +36,14 @@ export class Tab3Page {
       console.log('I am a an iOS PWA!');
       // E.g. hide the scan functionality!
     }
+  }
+
+  async addToRewards(){
+    var newString = this.scanResult.replace("https://","");
+    newString = newString.replace("www.","");
+    newString = newString.replace(".com","");
+    newString = newString.replace(".co.uk","");
+    this.rewardArray.push(newString);
   }
 
 
@@ -119,6 +128,7 @@ export class Tab3Page {
     initialSlide: 1
   };
 
+
   // Helper functions
   async showQrToast() {
 
@@ -131,7 +141,9 @@ export class Tab3Page {
           text: 'Claim',
           handler: () => {
             window.open(this.scanResult, '_system', 'location=yes');
-            this.rewardArray.push(this.scanResult);
+            this.addToRewards();
+
+
 
           }
          

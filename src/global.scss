@@ -27,7 +27,7 @@
 
 
 ion-content.background {
-    --background: url(../../ionicTest/src/assets/unsplash.png) no-repeat center/cover fixed;
+    --background: url(../../ionicTest/src/assets/texturebg.png) no-repeat center/cover fixed;
   }
 
   .cardconteudo {
@@ -44,12 +44,9 @@ ion-content.background {
   margin: -10%;
 }
 
-.slideCardconteudo {
-  background: rgba(0,0,0,0.7);
- border-radius: 170px 15px 15px 170px;
- text-align: right;
 
-}
+
+
 .centerSlides{
     vertical-align: center;
 }
@@ -93,13 +90,32 @@ ion-content.background {
     background: rgba(0,0,0,0.7);
   }
 
+  .slideCardconteudo {
+    background: rgba(0,0,0,0.7);
+   border-radius: 170px 15px 15px 170px;
+   text-align: right;
+   width: 340px;
+  }
+
   .swipeFab {
     width: auto;
     margin: auto;
     text-align: right;
     vertical-align: middle;
-    margin: 10%;
-    padding-left: 10%;
+    margin: 4%;
+    padding-left: 5%;
+  }
+
+  .rightCardIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 50%;
+    transform: translate(-130%, -50%);
+    width: 50px;
+    height: 50px;
+    display: block;
+
   }
 
   .fabNow{

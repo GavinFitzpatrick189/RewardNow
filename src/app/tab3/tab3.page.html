@@ -42,60 +42,11 @@
 
     <ion-slide>
       <ion-list class="bg-transparent">
-
-        <ion-item-sliding>
-          <ion-item color="none" lines="none">
-            <ion-card class="slideCardconteudo">
-              <img src="../../assets/centra.jpg" />
-              <ion-card-header>
-                <ion-card-title>Centra £5</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-          </ion-item>
-
-          <ion-item-options side="end" class="swipeFab">
-            <ion-fab-button class="fabNow">
-              <ion-icon name="Share"></ion-icon>
-            </ion-fab-button>
-          </ion-item-options>
-        </ion-item-sliding>
-
-        <ion-item-sliding>
-          <ion-item color="none" lines="none">
-            <ion-card class="slideCardconteudo">
-              <img src="../../assets/nandos.jpg" />
-              <ion-card-header>
-                <ion-card-title>Nandos 10%</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-          </ion-item>
-
-          <ion-item-options side="end" class="swipeFab">
-            <ion-fab-button class="fabNow">
-              <ion-icon name="Share"></ion-icon>
-            </ion-fab-button>
-          </ion-item-options>
-        </ion-item-sliding>
-
-
-
+    
         <ion-item-sliding *ngFor="let reward of rewardArray;">
-          <ion-item color="none" lines="none">
-            <ion-card class="slideCardconteudo">
-              <img src="../../assets/highStreet.jpg" />
-              <ion-card-header>
-                <ion-card-title>{{reward}}</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-          </ion-item>
-
-          <ion-item-options side="end" class="swipeFab">
-            <ion-fab-button (click)="shareReward(reward)" class="fabNow">
-              <ion-icon name="Share"></ion-icon>
-            </ion-fab-button>
-          </ion-item-options>
-        </ion-item-sliding>
-
+          <app-rightcard  [title]=reward ></app-rightcard>
+         </ion-item-sliding>
+ 
       </ion-list>
     </ion-slide>
   </ion-slides>
