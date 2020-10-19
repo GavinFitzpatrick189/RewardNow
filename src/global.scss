@@ -32,8 +32,24 @@ ion-content.background {
 
   .cardconteudo {
     background: rgba(0,0,0,0.7);
+   border-radius: 15px 170px 170px 15px;
 }
 
+.chipCardconteudo {
+  background: rgba(0,0,0,0.7);
+ border-radius: 170px 170px 170px 170px;
+}
+
+.slideMargin{
+  margin: -10%;
+}
+
+.slideCardconteudo {
+  background: rgba(0,0,0,0.7);
+ border-radius: 170px 15px 15px 170px;
+ text-align: right;
+
+}
 .centerSlides{
     vertical-align: center;
 }

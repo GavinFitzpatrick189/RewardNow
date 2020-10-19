@@ -134,7 +134,14 @@ export class Tab3Page {
             this.rewardArray.push(this.scanResult);
 
           }
-        }
+         
+        },
+
+        {
+          text: 'Cancel',
+         role:'Cancel'
+
+          } 
 
       ]
     });
