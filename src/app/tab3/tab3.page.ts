@@ -48,10 +48,7 @@ export class Tab3Page {
     newStr = newStr.charAt(0).toUpperCase() + newStr.slice(1);
 
     this.rewardArray.push(newStr);
-
     this.rewardService.rewardArray.next(this.rewardArray);
-
-
   }
 
 
@@ -62,8 +59,6 @@ export class Tab3Page {
       url: link,
       dialogTitle: 'Share with buddies'
     });
-
-
   }
 
 
@@ -137,10 +132,7 @@ export class Tab3Page {
   };
 
 
-  // Helper functions
   async showQrToast() {
-
-
     const toast = await this.toastCtrl.create({
       message: `${this.scanResult}`,
       position: 'bottom',
@@ -150,19 +142,12 @@ export class Tab3Page {
           handler: () => {
             window.open(this.scanResult, '_system', 'location=yes');
             this.addToRewards();
-
-
-
           }
-
         },
-
         {
           text: 'Cancel',
           role: 'Cancel'
-
         }
-
       ]
     });
     toast.present();
