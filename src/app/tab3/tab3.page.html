@@ -5,20 +5,10 @@
     <!-- LEFTSLIDE -->
     <ion-slide>
       <ion-list class="bg-transparent">
-        <app-leftcard [imageSource]="'../../assets/scanWine.jpg'" [subtitle]="'It all starts now'" [title]="'Scan'"
-          [content]="'Scan products with your smartphone'">
-        </app-leftcard>
-
-        <app-leftcard [imageSource]="'../../assets/scanVoucher.jpg'" [subtitle]="'Get what you are owed'"
-          [title]="'Claim'" [content]="'Claim rewards for products'">
-        </app-leftcard>
-        <app-leftcard [imageSource]="'../../assets/cellPhones.jpg'" [subtitle]="'Make my day'" [title]="'Share'"
-          [content]="'Share rewards with friends and family'">
-        </app-leftcard>
-
-        <app-leftcard [imageSource]="'../../assets/businessWoman.jpg'" [subtitle]="'What is new?'" [title]="'Notify'"
-          [content]="'Get notified about rewards'">
-        </app-leftcard>
+        <app-leftcard [imageSource]="'../../assets/phonescan.gif'" [subtitle]="'Scan products to get rewards'" [title]="'Scan'"> </app-leftcard>
+        <app-leftcard [imageSource]="'../../assets/share.gif'" [subtitle]="'Share rewards with friends'" [title]="'Share'"> </app-leftcard>
+        <app-leftcard [imageSource]="'../../assets/phone.gif'" [subtitle]="'Find the best for you'" [title]="'Find'"> </app-leftcard>
+       
       </ion-list>
     </ion-slide>
 
@@ -42,9 +32,11 @@
  
 
     <!-- RIGHTSLIDE -->
-  <ion-slide>
+
+  <ion-slide >
     <app-rightslide></app-rightslide>
   </ion-slide>
+
 
   </ion-slides>
 

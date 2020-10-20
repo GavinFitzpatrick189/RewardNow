@@ -10,7 +10,6 @@ export class LeftcardComponent implements OnInit {
   @Input('imageSource') imageSource: string;
   @Input('title') title: string;
   @Input('subtitle') subtitle: string;
-  @Input('content') content: string;
 
 
   constructor() { }
