@@ -3,6 +3,7 @@ import { ToastController, LoadingController, Platform } from '@ionic/angular';
 import jsQR from 'jsqr';
 
 import { Plugins } from '@capacitor/core';
+import { RewardService } from '../services/reward.service';
 const { Share } = Plugins;
 
 @Component({
@@ -28,31 +29,33 @@ export class Tab3Page {
   constructor(
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
-    private plt: Platform
+    private rewardService: RewardService
   ) {
-    const isInStandaloneMode = () =>
-      'standalone' in window.navigator && window.navigator['standalone'];
-    if (this.plt.is('ios') && isInStandaloneMode()) {
-      console.log('I am a an iOS PWA!');
-    }
+
+    this.rewardService.rewardArray.next(this.rewardArray);
+
   }
 
-  async addToRewards(){
+  async addToRewards() {
     var str = this.scanResult;
     var indices = [];
     for (var i = 0; i < str.length; i++) {
       if (str[i] === ".") indices.push(i);
     }
-    indices[0] ++;
+    indices[0]++;
 
-    var newStr = str.substring(indices[0],indices[1]);
+    var newStr = str.substring(indices[0], indices[1]);
     newStr = newStr.charAt(0).toUpperCase() + newStr.slice(1);
 
     this.rewardArray.push(newStr);
+
+    this.rewardService.rewardArray.next(this.rewardArray);
+
+
   }
 
 
-  async shareReward(link){
+  async shareReward(link) {
     await Share.share({
       title: 'New Reward',
       text: 'You have a new reward',
@@ -60,7 +63,7 @@ export class Tab3Page {
       dialogTitle: 'Share with buddies'
     });
 
-    
+
   }
 
 
@@ -151,14 +154,14 @@ export class Tab3Page {
 
 
           }
-         
+
         },
 
         {
           text: 'Cancel',
-         role:'Cancel'
+          role: 'Cancel'
 
-          } 
+        }
 
       ]
     });

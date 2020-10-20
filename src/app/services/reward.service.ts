@@ -6,10 +6,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class RewardService {
 
-  reward: any;
+  rewardArray:any;
   constructor() { 
 
-    this.reward = new BehaviorSubject(this.reward);
+    this.rewardArray = new BehaviorSubject(this.rewardArray);
   }
 
   

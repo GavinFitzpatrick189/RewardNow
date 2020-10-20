@@ -2,6 +2,7 @@
 
   <ion-slides pager="false" [options]="slideOpts">
 
+    <!-- LEFTSLIDE -->
     <ion-slide>
       <ion-list class="bg-transparent">
         <app-leftcard [imageSource]="'../../assets/scanWine.jpg'" [subtitle]="'It all starts now'" [title]="'Scan'"
@@ -21,6 +22,7 @@
       </ion-list>
     </ion-slide>
 
+    <!-- SCANNER SLIDE -->
     <ion-slide>
       <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event.target.files)">
       <ion-fab-button (click)="reset()" *ngIf="scanResult">
@@ -35,21 +37,20 @@
           </ion-card-title>
         </ion-card-header>
       </ion-card>
-      <ion-icon name="qr-code-outline" class="scanIcon" *ngIf="!scanResult"></ion-icon>
+      <img src="../../assets/scanimation2.gif" *ngIf="!scanActive" class="scanimation">
     </ion-slide>
+ 
 
-    <ion-slide>
-      <ion-list class="bg-transparent">
-        <ion-item-sliding *ngFor="let reward of rewardArray;">
-          <app-rightcard  [title]=reward ></app-rightcard>
-         </ion-item-sliding>
-      </ion-list>
-    </ion-slide>
+    <!-- RIGHTSLIDE -->
+  <ion-slide>
+    <app-rightslide></app-rightslide>
+  </ion-slide>
 
   </ion-slides>
 
 </ion-content>
 
+<!-- FOOTER -->
 <ion-footer translucent="true" no-border>
   <ion-grid class="scanFooter">
     <ion-row>

@@ -27,16 +27,16 @@
 
 
 ion-content.background {
-    --background: url(../../ionicTest/src/assets/circ.png) no-repeat center/cover fixed;
+    --background: url(../../ionicTest/src/assets/puurp.png) no-repeat center/cover fixed;
   }
 
   .cardconteudo {
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.4);
    border-radius: 15px 170px 170px 15px;
 }
 
 .chipCardconteudo {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.4);
  border-radius: 170px 170px 170px 170px;
 }
 
@@ -57,28 +57,24 @@ ion-content.background {
 
 .scanFooter {
   vertical-align: bottom;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.4);
 }
 
 
-.scanHeader {
-  vertical-align: top;
-  text-align: center;
-  background: rgba(0,0,0,0.5);
-  height: 40px;
-}
-
-
-.scanIcon {
+.scanimation{
   vertical-align: middle;
   text-align: center;
-  color: rgba(0,0,0,0.4);
   height: 350px;
   width: 350px;
+  filter: invert(100%);
+
 }
 
 .myphoto {
-    display: block;
+  vertical-align: middle;
+  text-align: center;
+  height: 350px;
+  width: 350px;
   }
 
   .myphotoIconBox {
@@ -87,11 +83,11 @@ ion-content.background {
     text-align: center;
     vertical-align: center;
     margin: 10%;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.4);
   }
 
   .slideCardconteudo {
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.4);
    border-radius: 170px 15px 15px 170px;
    text-align: right;
    width: 340px;
