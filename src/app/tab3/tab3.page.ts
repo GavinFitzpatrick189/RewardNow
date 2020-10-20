@@ -34,16 +34,21 @@ export class Tab3Page {
       'standalone' in window.navigator && window.navigator['standalone'];
     if (this.plt.is('ios') && isInStandaloneMode()) {
       console.log('I am a an iOS PWA!');
-      // E.g. hide the scan functionality!
     }
   }
 
   async addToRewards(){
-    var newString = this.scanResult.replace("https://","");
-    newString = newString.replace("www.","");
-    newString = newString.replace(".com","");
-    newString = newString.replace(".co.uk","");
-    this.rewardArray.push(newString);
+    var str = this.scanResult;
+    var indices = [];
+    for (var i = 0; i < str.length; i++) {
+      if (str[i] === ".") indices.push(i);
+    }
+    indices[0] ++;
+
+    var newStr = str.substring(indices[0],indices[1]);
+    newStr = newStr.charAt(0).toUpperCase() + newStr.slice(1);
+
+    this.rewardArray.push(newStr);
   }
 
 

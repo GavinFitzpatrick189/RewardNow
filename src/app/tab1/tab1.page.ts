@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RewardService } from '../services/reward.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,23 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  updatedReward:any;
+
+
+  constructor(private rewardService: RewardService) {
+
+    // this.rewardService.reward.subscribe(onNext: data =>{
+    //   this.updatedReward = data;
+    // });
+
+     
+  }
+
+
+  onNext(){
+    this.rewardService.reward.next(true);
+  }
 
 }
+
+
