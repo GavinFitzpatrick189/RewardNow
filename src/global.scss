@@ -26,9 +26,33 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 
+// SIDEMENU
+
+ion-menu {
+  --ion-background-color: rgba(0,0,0,0.4);
+  --ion-text-color: var(--ion-color-primary-contrast);
+
+  ion-toolbar {
+    --background: rgba(0,0,0,0.4);
+  }
+
+  ion-list {
+    background: rgba(0,0,0,0.4);
+  }
+}
+
+.fullyTransparent{
+  background: rgba(0,0,0,0.0);
+
+}
+
+
+
+
 ion-content.background {
     --background: url(../../ionicTest/src/assets/puurp.png) no-repeat center/cover fixed;
   }
+
 
   .cardconteudo {
     background: rgba(0,0,0,0.4);
@@ -67,12 +91,17 @@ ion-content.background {
   background: rgba(0,0,0,0.4);
 }
 
+.scanHeader {
+  vertical-align: top;
+  background: rgba(0,0,0,0.4);
+}
+
 
 .scanimation{
   vertical-align: middle;
   text-align: center;
-  height: 350px;
-  width: 350px;
+  height: 250px;
+  width: 250px;
   filter: invert(100%);
 
 }
@@ -117,18 +146,6 @@ ion-content.background {
   }
 
 
-
-  .cardAnimation {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 50%;
-     transform: translate(-30%, -50%);
-    width: 50px;
-    height: 50px;
-    display: block;
-
-  }
 
 
   .fabNow{
