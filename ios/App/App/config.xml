@@ -6,5 +6,7 @@
     <param name="ios-package" value="CDVBarcodeScanner"/>
   </feature>
 
+
+  <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
   
 </widget>
