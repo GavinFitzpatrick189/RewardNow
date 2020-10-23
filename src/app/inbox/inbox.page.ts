@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InboxPage implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
-  }
+  constructor( ) {  }
+
+  ngOnInit() { }
 
 }

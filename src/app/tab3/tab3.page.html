@@ -1,30 +1,25 @@
-
-
 <ion-content class="background" fullscreen="true">
 
-
-  <!-- FOOTER -->
-<ion-header translucent="true" no-border>
-  <ion-grid class="scanHeader">
-    <ion-row>
-
-      <ion-col class="flexcontainer">
-        <ion-menu-button></ion-menu-button>
-      </ion-col>
-
-      <ion-col class="flexcontainer">
-      </ion-col>
-
-      <ion-col class="flexcontainer">
-      </ion-col>
-
-     
-    </ion-row>
-
-  </ion-grid>
-</ion-header>
-
-
+  <ion-header translucent="true" no-border>
+    <ion-grid class="scanHeader">
+      <ion-row>
+  
+        <ion-col class="flexcontainer">
+          <ion-menu-button></ion-menu-button>
+        </ion-col>
+  
+        <ion-col class="flexcontainer">
+        </ion-col>
+  
+        <ion-col class="flexcontainer">
+        </ion-col>
+  
+       
+      </ion-row>
+  
+    </ion-grid>
+  </ion-header>
+  
 
 
   <ion-slides pager="false" [options]="slideOpts" >
@@ -41,23 +36,6 @@
 
     <!-- SCANNER SLIDE -->
     <ion-slide>
-      <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event.target.files)">
-      <ion-fab-button (click)="reset()" *ngIf="scanResult">
-        <ion-icon name="refresh"></ion-icon>
-      </ion-fab-button>
-      <video #video [hidden]="!scanActive" width="100%" class="myphoto" style="z-index: 2;"></video>
-      <canvas #canvas hidden></canvas>
-      
-      <ion-card *ngIf="scanResult" class="chipCardconteudo">
-        <ion-card-header>
-          <ion-card-title>
-            {{ scanResult }}
-          </ion-card-title>
-        </ion-card-header>
-      </ion-card>
-
-
-
       <img src="../../assets/scanimation2.gif"  class="scanimation" style="z-index: 1;">
     </ion-slide>
  
@@ -91,7 +69,7 @@
       </ion-col>
 
       <ion-col class="flexcontainer">
-        <ion-fab-button (click)="startScan()" class="fabNow">
+        <ion-fab-button (click)="scan()" class="fabNow">
           <ion-icon name="scan"></ion-icon>
         </ion-fab-button>
       </ion-col>

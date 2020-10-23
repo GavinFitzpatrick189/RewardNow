@@ -1,9 +1,9 @@
-<ion-app>
+<ion-app class="background" fullscreen="true"> 
   <ion-split-pane contentId="main-content" >
       <ion-menu contentId="main-content" type="overlay" >
           <ion-content > 
               <ion-list id="inbox-list" class="fullyTransparent" >
-                  <ion-list-header>Side Menu</ion-list-header>
+                  <ion-list-header>Reward Now</ion-list-header>
                   <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
                       <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" 
                                 detail="false" [class.selected]="selectedIndex == i" color="none" lines="none">
