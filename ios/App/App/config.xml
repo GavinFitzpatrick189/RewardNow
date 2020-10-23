@@ -8,5 +8,8 @@
 
 
   <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+      <string>To scan barcodes</string>
+  </edit-config>
+  
   
 </widget>
