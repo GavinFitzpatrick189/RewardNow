@@ -17,9 +17,16 @@ export class Tab3Page {
 
     this.rewardService.rewardArray.next(this.rewardArray);
 
+
+    this.hitThis();
+
   }
 
-  scan() {
+  async hitThis(){
+    console.log("Hit this");
+  }
+
+  async scan() {
     this.data = null;
     this.barcodeScanner.scan().then(barcodeData => {
       console.log('Barcode data', barcodeData);

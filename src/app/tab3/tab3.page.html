@@ -57,16 +57,12 @@
     <ion-row>
 
       <ion-col class="flexcontainer">
-        <ion-fab-button (click)="captureImage()" class="fabNow">
+        <ion-fab-button (click)="upload()" class="fabNow">
           <ion-icon name="image-outline"></ion-icon>
         </ion-fab-button>
       </ion-col>
 
-      <ion-col class="flexcontainer">
-        <ion-fab-button (click)="stopScan()" class="fabNow" *ngIf="scanActive">
-          <ion-icon name="close"></ion-icon>
-        </ion-fab-button>
-      </ion-col>
+    
 
       <ion-col class="flexcontainer">
         <ion-fab-button (click)="scan()" class="fabNow">
