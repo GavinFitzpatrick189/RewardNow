@@ -6,10 +6,8 @@
     <param name="ios-package" value="CDVBarcodeScanner"/>
   </feature>
 
-
-  <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
-      <string>To scan barcodes</string>
-  </edit-config>
-  
+<edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+    <string>To scan barcodes</string>
+</edit-config>
   
 </widget>
